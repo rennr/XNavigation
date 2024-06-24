@@ -14,7 +14,7 @@ open class DestinationHostingController<T: View>: UIHostingController<T> {
 
         if parent == nil {
             let itemsInStackCount = navigationController?.children.count ?? 0
-            if navigationController?.children[itemsInStackCount - 2].toolbarItems?.isEmpty == false {
+            if itemsInStackCount >= 2 && navigationController?.children[itemsInStackCount - 2].toolbarItems?.isEmpty == false {
                 navigationController?.isToolbarHidden = false
             }
         }
